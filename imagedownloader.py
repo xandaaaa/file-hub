@@ -32,9 +32,9 @@ def download_image(url, image_name, folder):
         print('Image Couldn\'t be retrieved')
 
 if __name__ == "__main__":
-    
+
     url = input('Enter URL: ')
     image_name = input('Save image as (filename and type): ')
     folder = input('Enter the folder path, if you wish to save it in the same folder (here) type "here": ')
-    
+
     download_image(url, image_name, folder)
