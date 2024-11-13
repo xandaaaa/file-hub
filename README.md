@@ -30,8 +30,8 @@ File Hub provides a variety of file conversions and media management tools, incl
 •   Reduces image quality (recommended)
 •   Lossless Compression (joins all content streams and applies a Flatedecode filter, possible to not perform anything further information: https://pypdf.readthedocs.io/en/stable/user/file-size.html)
 
-Installation:\n
-To install the required libraries, run the following command:\n
+Installation:  
+To install the required libraries, run the following command:
 ```
 pip install requests shutil os urllib pillow pillow_heif yt_dlp moviepy pypdf
 ```
