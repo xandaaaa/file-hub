@@ -1,5 +1,5 @@
 import os
-from pypdf import PdfWriter
+from pypdf import PdfWriter, PdfMerger
 
 # Removes images from PDF file
 def remove_img(file, name):
@@ -63,3 +63,15 @@ def compress(file, name):
     print(f"Compressed file size: {new_size / (1024 * 1024):.2f} MB")
     print("PDF successfully compressed to: ", new_file)
 
+# Merge PDF files
+def merge_pdf(array_of_files, name):
+
+    merger = PdfWriter()
+
+    new_file = name + ".pdf"
+
+    for pdf in array_of_files:
+        merger.append(pdf)
+
+    merger.write(new_file)
+    merger.close()

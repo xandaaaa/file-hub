@@ -10,11 +10,12 @@ if __name__ == "__main__":
     print("2 - Download a Youtube Video")
     print("3 - Convert an Image (Filetype)")
     print("4 - Convert a MP4 file to MP3")
-    print("5 - Compress a PDF file\n")
+    print("5 - Compress a PDF file")
+    print("6 - Merge PDF files\n")
 
     task = input("Enter the number of your choice: ")
 
-    if task not in ["1", "2", "3", "4", "5"]:
+    if task not in ["1", "2", "3", "4", "5", "6"]:
         print("Invalid choice, try again.")
         
     # Download Image
@@ -128,3 +129,16 @@ if __name__ == "__main__":
         
         if comptype not in ["1", "2", "3"]:
             print("Invalid Choice, please try again.")
+    
+    # Merge PDF files
+    if task == "6":
+            array_of_pdf_files = []
+            check = "YES"
+            file = input("Input the first PDF file: ")
+            array_of_pdf_files.append(file)
+            while check == "YES":
+                file = input("Input the next PDF file: ")
+                array_of_pdf_files.append(file)
+                check = input('Enter "YES" if you wish to add more PDF files if not press enter: ')
+            name = input("Please enter the desired name for the merged file: ")
+            merge_pdf(array_of_pdf_files, name)

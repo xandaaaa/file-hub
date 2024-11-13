@@ -30,6 +30,9 @@ File Hub provides a variety of file conversions and media management tools, incl
 •   Reduces image quality (recommended)  
 •   Lossless Compression (joins all content streams and applies a Flatedecode filter, possible to not perform anything further information: https://pypdf.readthedocs.io/en/stable/user/file-size.html)
 
+6.  PDF merging
+•   Simply input the path or name *(including .pdf)* into the input and it will merge with the first input being on top
+
 **Installation**:  
 To install the required libraries, run the following command:
 ```
