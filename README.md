@@ -1,9 +1,6 @@
 # File Hub
 
-REQUIREMENTS:
-Python 3
-libraries:
-requests, shutil, os, urllib, pillow, pillow_heif, yt_dlp, moviepy, pypdf
+File Hub combines various tools 
 
 1.	Download Image
 •	Enter the image URL
@@ -34,8 +31,17 @@ requests, shutil, os, urllib, pillow, pillow_heif, yt_dlp, moviepy, pypdf
 •   Reduces image quality (recommended)
 •   Lossless Compression (joins all content streams and applies a Flatedecode filter, possible to not perform anything further information: https://pypdf.readthedocs.io/en/stable/user/file-size.html)
 
-LIBRARIES:
-requests, shutil, os, urllib, pillow, pillow_heif, yt_dlp, moviepy, pypdf
+Libraries:
+
+	•	requests
+	•	shutil
+	•	os
+	•	urllib
+	•	pillow
+	•	pillow_heif
+	•	yt_dlp
+	•	moviepy
+	•	pypdf
 
 TO-DO:
 
