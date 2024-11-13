@@ -1,17 +1,18 @@
 from imagedownloader import download_image
 from videodownloader import download_youtube_video
-from convert import jpg_to_png, png_to_jpg, heic_to_png, heic_to_jpg, mp4_to_mp3
+from convert import jpg_to_png, png_to_jpg, heic_to_png, heic_to_jpg, mp4_to_mp3, png_to_pdf, jpg_to_pdf, heic_to_pdf
 
 if __name__ == "__main__":
 
     print("Welcome! Please choose an option:\n")
     print("1 - Download an Image")
     print("2 - Download a Youtube Video")
-    print("3 - Convert an Image (Filetype)\n")
+    print("3 - Convert an Image (Filetype)")
+    print("4 - Convert a MP4 file to MP3\n")
 
     task = input("Enter the number of your choice: ")
 
-    if task not in ["1", "2", "3"]:
+    if task not in ["1", "2", "3", "4"]:
         print("Invalid choice, try again.")
         
     # Download Image
@@ -40,24 +41,65 @@ if __name__ == "__main__":
         if choice not in ["1", "2"]:
             print("Invalid Choice, please try again.")
 
-    # Converts Image (JPG <-> PNG, HEIC -> PNG or JPG, MP4 -> MP3)
+    # Converts Image (JPG <-> PNG, HEIC -> PNG or JPG, PNG, JPG, HEIC -> PDF)
     if task == "3":
 
-        file = input("enter file you want to convert: ")
         print("Please choose an option:\n")
-        print(" 1 - JPG to PNG\n 2 - PNG to JPG\n 3 - HEIC to PNG\n 4 - HEIC to JPG\n 5 - MP4 to MP3\n")
+        print(" 1 - JPG to PNG\n 2 - PNG to JPG\n 3 - HEIC to PNG\n 4 - HEIC to JPG\n 5 - PNG to PDF\n 6 - JPG to PDF\n 7 - HEIC to PDF\n")
 
         convtype = input("Enter the number of your choice: ")
         if convtype == "1":
-            jpg_to_png(file)
+            file = input("enter file you want to convert: ")
+            name = input("Please enter the desired name for the file: ")
+            jpg_to_png(file, name)
         if convtype == "2":
-            png_to_jpg(file)
+            file = input("enter file you want to convert: ")
+            name = input("Please enter the desired name for the file: ")
+            png_to_jpg(file, name)
         if convtype == "3":
-            heic_to_png(file)
+            file = input("enter file you want to convert: ")
+            name = input("Please enter the desired name for the file: ")
+            heic_to_png(file, name)
         if convtype == "4":
-            heic_to_jpg(file)
+            file = input("enter file you want to convert: ")
+            name = input("Please enter the desired name for the file: ")
+            heic_to_jpg(file, name)
+            
         if convtype == "5":
-            mp4_to_mp3(file)
+            array_of_png_files = []
+            check = "YES"
+            while check == "YES":
+                file = input("input the image you want to convert: ")
+                array_of_png_files.append(file)
+                check = input('Enter "YES" if you wish to convert more files into the PDF if not press enter: ')
+            name = input("Please enter the desired name for the file: ")
+            png_to_pdf(array_of_png_files, name)
 
-        if convtype not in ["1", "2", "3", "4", "5"]:
+        if convtype == "6":
+            array_of_jpg_files = []
+            check = "YES"
+            while check == "YES":
+                file = input("input the image you want to convert: ")
+                array_of_jpg_files.append(file)
+                check = input('Enter "YES" if you wish to convert more files into the PDF if not press enter: ')
+            name = input("Please enter the desired name for the file: ")
+            jpg_to_pdf(array_of_jpg_files, name)
+
+        if convtype == "7":
+            array_of_heic_files = []
+            check = "YES"
+            while check == "YES":
+                file = input("input the image you want to convert: ")
+                array_of_heic_files.append(file)
+                check = input('Enter "YES" if you wish to convert more files into the PDF if not press enter: ')
+            name = input("Please enter the desired name for the file: ")
+            heic_to_pdf(array_of_heic_files, name)
+
+        if convtype not in ["1", "2", "3", "4", "5", "6", "7"]:
             print("Invalid Choice, please try again.")
+    
+    # Converts video (MP4 file) to audio (MP3 file)
+    if task == "4":
+        mp4 = input("Please enter the path of the video you want to convert: ")
+        mp3 = input("Please enter desired name of the MP3 file: ")
+        mp4_to_mp3(mp4, mp3)

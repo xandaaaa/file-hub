@@ -21,6 +21,9 @@ def download_image(url, image_name, folder):
     # Extract filetype from the path above
     _, filetype = os.path.splitext(new_image_name)
 
+    if filetype == "":
+        filetype = ".png"
+
     # If given name does not specify a filetype, parse it
     if not os.path.splitext(image_name)[1]:
         image_name += filetype

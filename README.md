@@ -15,7 +15,14 @@
 •	PNG to JPG
 •   HEIC to PNG
 •	HEIC to JPG
-•   MP4 to MP3 (In process)
+•	PNG to PDF (sized 800 width, with original height ratio)
+•	JPG to PDF (sized 800 width, with original height ratio)
+•	HEIC to PDF (sized 800 width, with original height ratio)
+
+
+4.  MP4 to MP3
+•   Specify MP4 (path)
+•   Give MP3 desired name, will download to the same folder MP4 is in
 
 TO-DO:
 
