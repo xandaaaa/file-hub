@@ -2,46 +2,50 @@
 
 File Hub combines various tools 
 
-1.	Download Image
-•	Enter the image URL
-•	Specify a name (file type is appended automatically if not provided)
-•	Choose a folder or path to save the image to, creates folder if it does not exist
+1. Download Image
 
-2.	Download YouTube Video
-•	Enter the YouTube video URL
-•	Choose a folder or path to save the video to, creates folder if it does not exist
-•	Optionally, select a time range to download a specific portion of the video
+	•	Enter the image URL.
+	•	Specify a name: The file type (e.g., .jpg, .png) is appended automatically if not provided.
+	•	Choose a folder or path: If the folder does not exist, it will be created.
 
-3.	Convert File
-•	JPG to PNG
-•	PNG to JPG
-•   HEIC to PNG
-•	HEIC to JPG
-•	PNG to PDF (sized 800 width, with original height ratio)
-•	JPG to PDF (sized 800 width, with original height ratio)
-•	HEIC to PDF (sized 800 width, with original height ratio)
+2. Download YouTube Video
 
+	•	Enter the YouTube video URL.
+	•	Choose a folder or path: If the folder does not exist, it will be created.
+	•	Optionally, select a time range: Download a specific portion of the video by specifying a start and end time.
 
-4.  MP4 to MP3
-•   Specify MP4 (path)
-•   Give MP3 desired name, will download to the same folder MP4 is in
+3. Convert Files
 
-5.  PDF Compression
-•   Removes images from PDF file
-•   Reduces image quality (recommended)
-•   Lossless Compression (joins all content streams and applies a Flatedecode filter, possible to not perform anything further information: https://pypdf.readthedocs.io/en/stable/user/file-size.html)
+	•	JPG to PNG
+	•	PNG to JPG
+	•	HEIC to PNG
+	•	HEIC to JPG
+	•	PNG to PDF (sized to 800 width, maintaining original height ratio)
+	•	JPG to PDF (sized to 800 width, maintaining original height ratio)
+	•	HEIC to PDF (sized to 800 width, maintaining original height ratio)
+
+4. MP4 to MP3
+
+	•	Specify MP4 file path.
+	•	Provide a desired MP3 name: The MP3 will be saved in the same folder as the original MP4 file.
+
+5. PDF Compression
+
+	•	Remove images from the PDF file.
+	•	Reduce image quality (recommended for file size reduction).
+	•	Lossless Compression: Joins content streams and applies a Flatedecode filter, which may not result in further compression. For more information, visit pypdf file size guide.
 
 Libraries:
 
-	•	requests
-	•	shutil
-	•	os
-	•	urllib
-	•	pillow
-	•	pillow_heif
-	•	yt_dlp
-	•	moviepy
-	•	pypdf
+	• requests
+	• shutil
+	• os
+	• urllib
+	• pillow
+	• pillow_heif
+	• yt_dlp
+	• moviepy
+	• pypdf
 
 TO-DO:
 
