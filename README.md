@@ -32,4 +32,4 @@ File Hub provides a variety of file conversions and media management tools, incl
 
 Installation:
 To install the required libraries, run the following command:
-pip install requests shutil os urllib pillow pillow_heif yt_dlp moviepy pypdf
+```pip install requests shutil os urllib pillow pillow_heif yt_dlp moviepy pypdf```
