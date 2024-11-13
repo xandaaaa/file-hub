@@ -1,6 +1,7 @@
 from imagedownloader import download_image
 from videodownloader import download_youtube_video
-from convert import jpg_to_png, png_to_jpg, heic_to_png, heic_to_jpg, mp4_to_mp3, png_to_pdf, jpg_to_pdf, heic_to_pdf
+from convert import *
+from pdf import *
 
 if __name__ == "__main__":
 
@@ -8,11 +9,12 @@ if __name__ == "__main__":
     print("1 - Download an Image")
     print("2 - Download a Youtube Video")
     print("3 - Convert an Image (Filetype)")
-    print("4 - Convert a MP4 file to MP3\n")
+    print("4 - Convert a MP4 file to MP3")
+    print("5 - Compress a PDF file\n")
 
     task = input("Enter the number of your choice: ")
 
-    if task not in ["1", "2", "3", "4"]:
+    if task not in ["1", "2", "3", "4", "5"]:
         print("Invalid choice, try again.")
         
     # Download Image
@@ -49,19 +51,19 @@ if __name__ == "__main__":
 
         convtype = input("Enter the number of your choice: ")
         if convtype == "1":
-            file = input("enter file you want to convert: ")
+            file = input("Enter file you want to convert: ")
             name = input("Please enter the desired name for the file: ")
             jpg_to_png(file, name)
         if convtype == "2":
-            file = input("enter file you want to convert: ")
+            file = input("Enter file you want to convert: ")
             name = input("Please enter the desired name for the file: ")
             png_to_jpg(file, name)
         if convtype == "3":
-            file = input("enter file you want to convert: ")
+            file = input("Enter file you want to convert: ")
             name = input("Please enter the desired name for the file: ")
             heic_to_png(file, name)
         if convtype == "4":
-            file = input("enter file you want to convert: ")
+            file = input("Enter file you want to convert: ")
             name = input("Please enter the desired name for the file: ")
             heic_to_jpg(file, name)
             
@@ -69,7 +71,7 @@ if __name__ == "__main__":
             array_of_png_files = []
             check = "YES"
             while check == "YES":
-                file = input("input the image you want to convert: ")
+                file = input("Input the image you want to convert: ")
                 array_of_png_files.append(file)
                 check = input('Enter "YES" if you wish to convert more files into the PDF if not press enter: ')
             name = input("Please enter the desired name for the file: ")
@@ -79,7 +81,7 @@ if __name__ == "__main__":
             array_of_jpg_files = []
             check = "YES"
             while check == "YES":
-                file = input("input the image you want to convert: ")
+                file = input("Input the image you want to convert: ")
                 array_of_jpg_files.append(file)
                 check = input('Enter "YES" if you wish to convert more files into the PDF if not press enter: ')
             name = input("Please enter the desired name for the file: ")
@@ -89,7 +91,7 @@ if __name__ == "__main__":
             array_of_heic_files = []
             check = "YES"
             while check == "YES":
-                file = input("input the image you want to convert: ")
+                file = input("Input the image you want to convert: ")
                 array_of_heic_files.append(file)
                 check = input('Enter "YES" if you wish to convert more files into the PDF if not press enter: ')
             name = input("Please enter the desired name for the file: ")
@@ -103,3 +105,26 @@ if __name__ == "__main__":
         mp4 = input("Please enter the path of the video you want to convert: ")
         mp3 = input("Please enter desired name of the MP3 file: ")
         mp4_to_mp3(mp4, mp3)
+
+    # Compress a PDF file
+    if task == "5":
+        print("Please choose an option:\n")
+        print(" 1 - Remove images\n 2 - Reduce image quality\n 3 - Compress without visible changes\n")
+
+        comptype = input("Enter the number of your choice: ")
+        if comptype == "1":
+            file = input("Input the PDF file you want to compress: ")
+            name = input("Please enter the desired name for the file: ")
+            remove_img(file, name)
+        if comptype == "2":
+            file = input("Input the PDF file you want to compress: ")
+            name = input("Please enter the desired name for the file: ")
+            quality = int(input("Input the desired Quality of the images in the PDF file (0-100): "))
+            reduce_quality_img(file, name, quality)
+        if comptype == "3":
+            file = input("Input the PDF file you want to compress: ")
+            name = input("Please enter the desired name for the file: ")
+            compress(file, name)
+        
+        if comptype not in ["1", "2", "3"]:
+            print("Invalid Choice, please try again.")

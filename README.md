@@ -24,8 +24,15 @@
 •   Specify MP4 (path)
 •   Give MP3 desired name, will download to the same folder MP4 is in
 
+5.  PDF Compression
+•   Removes images from PDF file
+•   Reduces image quality (recommended)
+•   Lossless Compression (joins all content streams and applies a Flatedecode filter, possible to not perform anything further information: https://pypdf.readthedocs.io/en/stable/user/file-size.html)
+
+USED LIBRARIES:
+requests, shutil, os, urllib, pillow, pillow_heif, yt_dlp, moviepy, pypdf
+
 TO-DO:
 
-compress pdf
 concatenate pdf files
 interface
